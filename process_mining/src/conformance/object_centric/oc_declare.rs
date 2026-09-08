@@ -138,7 +138,7 @@ fn directly_adjacent_event<'a>(
 /// Get fraction of source events violating this constraint arc
 ///
 /// Returns a value from 0 (all source events satisfy this constraint) to 1 (all source events violate this constraint)
-pub(crate) fn violation_fraction(
+pub fn violation_fraction(
     from_et: &str,
     to_et: &str,
     label: &OCDeclareArcLabel,
@@ -304,6 +304,19 @@ pub(crate) fn event_violates(
             }
         }
     })
+}
+
+/// Returns true if the given source event violates the arc.
+pub fn arc_violated_at(ocel: &SlimLinkedOCEL, arc: &OCDeclareArc, ev: &EventOrSynthetic) -> bool {
+    event_violates(
+        ev,
+        &arc.label,
+        arc.to.as_str(),
+        &arc.arc_type,
+        &arc.counts,
+        ocel,
+        None,
+    )
 }
 
 #[register_binding]

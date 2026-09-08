@@ -1,3 +1,8 @@
+//! Discover a Petri net from an XES event log with Alpha+++ and export it to PNML.
+//!
+//! Usage:
+//!   cargo run --release --example process_discovery -- <log.xes> <out.pnml>
+
 use process_mining::core::event_data::case_centric::utils::activity_projection::EventLogActivityProjection;
 use process_mining::discovery::case_centric::alphappp::full::{
     alphappp_discover_petri_net, AlphaPPPConfig,

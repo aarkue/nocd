@@ -1,0 +1,9 @@
+[package]
+name = "oc-declare-reason"
+version = "0.1.0"
+edition = "2021"
+description = "Entailment between OC-DECLARE constraints by bounded countermodel search"
+license = "MIT OR Apache-2.0"
+authors = ["Aaron Küsters"]
+
+[dependencies]

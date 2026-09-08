@@ -1,3 +1,8 @@
+//! Discover an OC-DECLARE existence model with the default options and report its size.
+//!
+//! Usage:
+//!   cargo run --release --example oc_declare -- <log>
+
 use std::{env::args, path::PathBuf};
 
 use process_mining::{

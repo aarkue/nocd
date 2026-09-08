@@ -1,0 +1,30 @@
+== ContainerLogistics.xml
+cut 2024-04-01 08:49:21 +00:00: 24788 training events of 35413
+held-out source events 10625; structural properties broken on full log: 19 of 98 multiplicities, 0 of 17 uniqueness
+existence rho=0: 73 arcs, 60 hold on held-out at rho
+existence rho=0.2: 116 arcs, 115 hold on held-out at rho
+  lost events violating an existence premise themselves: held-out 51 of 62, training 0 of 0
+tau=0 fixed: discovered 120 -> reduced 2; reduced holding on held-out 0 | held-out flagged discovered 74 reduced 12 lost 62 | training flagged discovered 0 lost 0 | check time discovered 0.03s reduced 0.00s
+  ARC	fixed	0	AS	Place in Stock	Reschedule Container	Any(Container)	548	3
+  ARC	fixed	0	EF	Load to Vehicle	Reschedule Container	Any(Vehicle)	598	9
+  lost events violating an existence premise themselves: held-out 5 of 37, training 0 of 0
+tau=0 matched: discovered 120 -> reduced 7; reduced holding on held-out 2 | held-out flagged discovered 74 reduced 37 lost 37 | training flagged discovered 0 lost 0 | check time discovered 0.03s reduced 0.00s
+  ARC	matched	0	EP	Order Empty Containers	Pick Up Empty Container	Any(Container)	185	2
+  ARC	matched	0	EF	Drive to Terminal	Load Truck	Any(Container)	597	3
+  ARC	matched	0	EF	Bring to Loading Bay	Place in Stock	Any(Container)	598	0
+  ARC	matched	0	EF	Load to Vehicle	Reschedule Container	Any(Vehicle)	598	9
+  ARC	matched	0	AS	Place in Stock	Reschedule Container	Any(Container)	548	3
+  ARC	matched	0	EP	Book Vehicles	Depart	Any(Vehicle)	186	20
+  ARC	matched	0	EF	Depart	Load to Vehicle	Any(Vehicle)	41	0
+  lost events violating an existence premise themselves: held-out 81 of 111, training 296 of 349
+tau=0.2 fixed: discovered 126 -> reduced 10; reduced holding on held-out 9 | held-out flagged discovered 165 reduced 54 lost 111 | training flagged discovered 441 lost 349 | check time discovered 0.04s reduced 0.00s
+  ARC	fixed	0.2	AS	Reschedule Container	Place in Stock	Any(Container)	5	0
+  ARC	fixed	0.2	EF	Load to Vehicle	Reschedule Container	Any(Vehicle)	598	9
+  ARC	fixed	0.2	AS	Depart	Reschedule Container	Any(Vehicle)	41	4
+  ARC	fixed	0.2	AS	Reschedule Container	Book Vehicles	Any(Transport Document,Vehicle)	5	2
+  ARC	fixed	0.2	EF	Depart	Reschedule Container	Any(Transport Document)	41	3
+  ARC	fixed	0.2	AS	Bring to Loading Bay	Reschedule Container	Any(Container)	598	5
+  ARC	fixed	0.2	EP	Book Vehicles	Reschedule Container	Any(Vehicle)	186	25
+  ARC	fixed	0.2	AS	Book Vehicles	Reschedule Container	Any(Transport Document)	186	5
+  ARC	fixed	0.2	EP	Book Vehicles	Load to Vehicle	Any(Vehicle)	186	21
+  ARC	fixed	0.2	AS	Depart	Order Empty Containers	All(Container)	41	0

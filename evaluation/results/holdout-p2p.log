@@ -1,0 +1,25 @@
+== ocel2-p2p.xml
+cut 2024-01-20 03:30:00 +00:00: 10269 training events of 14671
+held-out source events 4402; structural properties broken on full log: 0 of 70 multiplicities, 0 of 12 uniqueness
+existence rho=0: 17 arcs, 17 hold on held-out at rho
+existence rho=0.2: 32 arcs, 31 hold on held-out at rho
+  lost events violating an existence premise themselves: held-out 0 of 0, training 0 of 0
+tau=0 fixed: discovered 42 -> reduced 3; reduced holding on held-out 3 | held-out flagged discovered 0 reduced 0 lost 0 | training flagged discovered 0 lost 0 | check time discovered 0.01s reduced 0.00s
+  ARC	fixed	0	AS	Approve Purchase Requisition	Delegate Purchase Requisition Approval	Any(purchase_requisition)	167	0
+  ARC	fixed	0	AS	Approve Purchase Requisition	Delegate Purchase Requisition Approval	Any(material)	167	0
+  ARC	fixed	0	EF	Execute Payment	Perform Two-Way Match	Any(invoice receipt)	359	0
+  lost events violating an existence premise themselves: held-out 0 of 0, training 0 of 0
+tau=0 matched: discovered 42 -> reduced 5; reduced holding on held-out 5 | held-out flagged discovered 0 reduced 0 lost 0 | training flagged discovered 0 lost 0 | check time discovered 0.01s reduced 0.00s
+  ARC	matched	0	AS	Approve Purchase Requisition	Delegate Purchase Requisition Approval	Any(material)	167	0
+  ARC	matched	0	EP	Approve Purchase Requisition	Create Request for Quotation	Any(purchase_requisition)	167	0
+  ARC	matched	0	EF	Execute Payment	Perform Two-Way Match	Any(invoice receipt)	359	0
+  ARC	matched	0	AS	Approve Purchase Requisition	Delegate Purchase Requisition Approval	Any(purchase_requisition)	167	0
+  ARC	matched	0	EP	Create Purchase Requisition	Create Request for Quotation	Any(purchase_requisition)	207	0
+  lost events violating an existence premise themselves: held-out 263 of 302, training 569 of 669
+tau=0.2 fixed: discovered 49 -> reduced 6; reduced holding on held-out 6 | held-out flagged discovered 463 reduced 161 lost 302 | training flagged discovered 1036 lost 669 | check time discovered 0.01s reduced 0.00s
+  ARC	fixed	0.2	AS	Create Request for Quotation	Delegate Purchase Requisition Approval	Any(purchase_requisition)	271	40
+  ARC	fixed	0.2	AS	Approve Purchase Requisition	Delegate Purchase Requisition Approval	Any(material)	167	0
+  ARC	fixed	0.2	EP	Create Goods Receipt	Execute Payment	Any(purchase_order)	1224	80
+  ARC	fixed	0.2	EF	Approve Purchase Order	Create Purchase Order	Any(quotation)	472	41
+  ARC	fixed	0.2	AS	Delegate Purchase Requisition Approval	Approve Purchase Requisition	Any(purchase_requisition)	40	0
+  ARC	fixed	0.2	EF	Execute Payment	Perform Two-Way Match	Any(invoice receipt)	359	0

@@ -1,0 +1,49 @@
+### container-logistics
+=== ContainerLogistics.xml ===
+  loaded: 35413 events, 13910 objects (102.764072ms)
+  linked: 18.150255ms
+  existence: 116 arcs (75.262846ms)
+  wrote rerun/container-logistics/ContainerLogistics-existence.json
+  tau=0: discovered 56 -> reduced 12 (discover 67.939823ms, reduce 37.657989ms)
+  wrote rerun/container-logistics/ContainerLogistics-negative-tau0.json
+  tau=0.2: discovered 128 -> reduced 39 (discover 248.571034ms, reduce 53.645826ms)
+  wrote rerun/container-logistics/ContainerLogistics-negative-tau0.2.json
+
+  rho  exist. exist.red   disc. neg.red  mixed
+    0      73        31      56     20     51   (325.73159ms)
+  0.2     116        42     128     39     81   (449.39684ms)
+
+== ContainerLogistics.xml ==
+existence model: 116 arcs (arrows: AS,EF,EP)
+--- tau = 0 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5       30     53.6%
+                7. rule B / B'       14     25.0%
+          8. orientation dedup        0      0.0%
+                         total       44     78.6%
+                    model size 56 -> 12
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored       39               21
+            4. target-anchored       70               30
+     5. object-set equivalence        3                3
+
+--- tau = 0.2 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5       77     60.2%
+                7. rule B / B'       12      9.4%
+          8. orientation dedup        0      0.0%
+                         total       89     69.5%
+                    model size 128 -> 39
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored       95               31
+            4. target-anchored      190               72
+     5. object-set equivalence        4                3
+

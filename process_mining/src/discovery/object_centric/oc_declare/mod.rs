@@ -1,4 +1,6 @@
 //! Discovering OC-DECLARE Models from Object-Centric Event Data
+pub mod negative;
+
 use std::collections::{HashMap, HashSet, VecDeque};
 
 use rustc_hash::FxHashSet;
@@ -76,6 +78,12 @@ pub struct OCDeclareDiscoveryOptions {
     ///
     /// Should be non-empty!
     pub considered_arrow_types: HashSet<OCDeclareArcType>,
+    /// Also emit an `All` label where no source event carries more than one object of the type
+    ///
+    /// There `Each` and `All` have the same matching events, and the default reports only `Each`.
+    /// Rules that test `All` syntactically, such as object-set equivalence, see nothing on a log
+    /// whose types are all single-valued unless this is set.
+    pub all_for_single_valued_types: bool,
 }
 impl Default for OCDeclareDiscoveryOptions {
     fn default() -> Self {
@@ -88,6 +96,7 @@ impl Default for OCDeclareDiscoveryOptions {
             reduction: OCDeclareReductionMode::None,
             refinement: false,
             considered_arrow_types: ALL_OC_DECLARE_ARC_TYPES.iter().copied().collect(),
+            all_for_single_valued_types: false,
         }
     }
 }
@@ -132,6 +141,7 @@ pub fn discover_behavior_constraints(
                 options.noise_threshold,
                 locel,
                 &index,
+                options.all_for_single_valued_types,
             );
             let old = combine_constraints(
                 act_arcs, act1, act2, direction, &options, locel, true, &index,
@@ -197,6 +207,7 @@ pub(crate) fn get_oi_labels<'a>(
     noise_threshold: f64,
     locel: &SlimLinkedOCEL,
     index: &E2ORevByTypeIndex,
+    all_for_single_valued_types: bool,
 ) -> Vec<OCDeclareArcLabel> {
     let mut ret = Vec::new();
     for (ot, is_multiple) in obj_invs {
@@ -261,14 +272,22 @@ pub(crate) fn get_oi_labels<'a>(
                     }
                 }
             } else {
-                // Not multiple? Then add as Each
-                // This is a preference/choice, of course All would also hold on the input data
-                let each_label = OCDeclareArcLabel {
-                    each: any_label.any.clone(),
-                    any: vec![],
-                    all: vec![],
+                // Not multiple? Then Each, All and Any impose the same filter, so report one.
+                // Which one is a preference/choice; All is the maximal of the three.
+                let label = if all_for_single_valued_types {
+                    OCDeclareArcLabel {
+                        each: vec![],
+                        any: vec![],
+                        all: any_label.any.clone(),
+                    }
+                } else {
+                    OCDeclareArcLabel {
+                        each: any_label.any.clone(),
+                        any: vec![],
+                        all: vec![],
+                    }
                 };
-                ret.push(each_label);
+                ret.push(label);
             }
         }
     }
@@ -492,6 +511,7 @@ pub(crate) fn refine_oc_arcs_indexed(
                 options.noise_threshold,
                 locel,
                 index,
+                options.all_for_single_valued_types,
             );
 
             // Try to combine with previous labels

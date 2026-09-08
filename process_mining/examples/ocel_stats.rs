@@ -1,3 +1,8 @@
+//! Event, object and relation counts of an OCEL.
+//!
+//! Usage:
+//!   cargo run --release --example ocel_stats -- <log>
+
 use process_mining::core::event_data::object_centric::linked_ocel::{
     LinkedOCELAccess, SlimLinkedOCEL,
 };

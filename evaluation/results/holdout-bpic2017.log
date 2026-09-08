@@ -1,0 +1,156 @@
+== bpic2017-ocel2.json
+cut 2016-09-25 03:38:55 +00:00: 841585 training events of 1202267
+held-out source events 360682; structural properties broken on full log: 0 of 104 multiplicities, 1 of 16 uniqueness
+existence rho=0: 110 arcs, 95 hold on held-out at rho
+existence rho=0.2: 658 arcs, 578 hold on held-out at rho
+  lost events violating an existence premise themselves: held-out 0 of 0, training 0 of 6
+tau=0 fixed: discovered 214 -> reduced 29; reduced holding on held-out 28 | held-out flagged discovered 4 reduced 4 lost 0 | training flagged discovered 8 lost 6 | check time discovered 85.46s reduced 0.82s
+  ARC	fixed	0	AS	W_Personal Loan collection	W_Shortened completion 	Any(Case_R)	6	4
+  ARC	fixed	0	AS	A_Denied	A_Pending	Any(Application)	1349	0
+  ARC	fixed	0	AS	A_Accepted	A_Submitted	Any(Case_R)	8721	0
+  ARC	fixed	0	EF	A_Concept	A_Create Application	Any(Application)	8631	0
+  ARC	fixed	0	AS	O_Accepted	O_Refused	Any(Offer)	5739	0
+  ARC	fixed	0	AS	W_Complete application	W_Personal Loan collection	Any(Case_R,Workflow)	40976	0
+  ARC	fixed	0	AS	O_Sent (mail and online)	O_Sent (online only)	Any(Offer)	10951	0
+  ARC	fixed	0	AS	W_Call after offers	W_Personal Loan collection	Any(Case_R,Workflow)	54869	0
+  ARC	fixed	0	EP	W_Call incomplete files	W_Personal Loan collection	Any(Workflow)	60881	0
+  ARC	fixed	0	AS	W_Assess potential fraud	W_Shortened completion 	Any(Workflow)	1316	0
+  ARC	fixed	0	EP	W_Assess potential fraud	W_Personal Loan collection	Any(Workflow)	1316	0
+  ARC	fixed	0	EP	A_Create Application	A_Submitted	Any(Application)	8621	0
+  ARC	fixed	0	EF	A_Denied	A_Incomplete	Any(Application)	1349	0
+  ARC	fixed	0	AS	A_Cancelled	A_Pending	Any(Application)	3819	0
+  ARC	fixed	0	EF	A_Cancelled	A_Incomplete	Any(Application)	3819	0
+  ARC	fixed	0	AS	O_Cancelled	O_Refused	Any(Offer)	7248	0
+  ARC	fixed	0	EF	O_Returned	O_Sent (online only)	Any(Offer)	7306	0
+  ARC	fixed	0	EF	O_Refused	O_Sent (online only)	Any(Offer)	1659	0
+  ARC	fixed	0	AS	O_Accepted	O_Cancelled	Any(Offer)	5739	0
+  ARC	fixed	0	EF	A_Cancelled	A_Validating	Any(Application)	3819	0
+  ARC	fixed	0	AS	W_Personal Loan collection	W_Shortened completion 	Any(Workflow)	6	0
+  ARC	fixed	0	EF	W_Complete application	W_Handle leads	Any(Workflow)	40976	0
+  ARC	fixed	0	EF	W_Call after offers	W_Complete application	Any(Workflow)	54869	0
+  ARC	fixed	0	EF	O_Cancelled	O_Sent (online only)	Any(Offer)	7248	0
+  ARC	fixed	0	EF	O_Refused	O_Returned	Any(Offer)	1659	0
+  ARC	fixed	0	EF	O_Cancelled	O_Returned	Any(Offer)	7248	0
+  ARC	fixed	0	EF	A_Denied	A_Validating	Any(Application)	1349	0
+  ARC	fixed	0	EP	W_Call after offers	W_Personal Loan collection	Any(Workflow)	54869	0
+  ARC	fixed	0	AS	W_Handle leads	W_Shortened completion 	Any(Case_R,Workflow)	12840	0
+  lost events violating an existence premise themselves: held-out 0 of 0, training 0 of 6
+tau=0 matched: discovered 214 -> reduced 46; reduced holding on held-out 45 | held-out flagged discovered 4 reduced 4 lost 0 | training flagged discovered 8 lost 6 | check time discovered 85.46s reduced 22.41s
+  ARC	matched	0	EP	W_Assess potential fraud	W_Personal Loan collection	Any(Workflow)	1316	0
+  ARC	matched	0	EF	A_Cancelled	A_Incomplete	Any(Application)	3819	0
+  ARC	matched	0	AS	A_Pending	A_Submitted	Any(Case_R)	5739	0
+  ARC	matched	0	AS	A_Submitted	W_Personal Loan collection	Any(Case_R)	5614	0
+  ARC	matched	0	AS	W_Personal Loan collection	W_Shortened completion 	Any(Case_R)	6	4
+  ARC	matched	0	EF	O_Cancelled	O_Sent (online only)	Any(Offer)	7248	0
+  ARC	matched	0	EF	A_Denied	A_Validating	Any(Application)	1349	0
+  ARC	matched	0	AS	A_Cancelled	A_Pending	Any(Application)	3819	0
+  ARC	matched	0	AS	W_Handle leads	W_Shortened completion 	Any(Case_R,Workflow)	12840	0
+  ARC	matched	0	EP	O_Create Offer	O_Created	Any(Offer)	12016	0
+  ARC	matched	0	EF	A_Denied	A_Incomplete	Any(Application)	1349	0
+  ARC	matched	0	AS	W_Assess potential fraud	W_Shortened completion 	Any(Workflow)	1316	0
+  ARC	matched	0	EF	W_Complete application	W_Handle leads	Any(Workflow)	40976	0
+  ARC	matched	0	AS	W_Call after offers	W_Personal Loan collection	Any(Case_R,Workflow)	54869	0
+  ARC	matched	0	AS	W_Handle leads	W_Personal Loan collection	Any(Case_R,Workflow)	12840	0
+  ARC	matched	0	EF	A_Pending	A_Validating	Any(Application)	5739	0
+  ARC	matched	0	EF	A_Concept	A_Submitted	Any(Application)	8631	0
+  ARC	matched	0	AS	O_Cancelled	O_Refused	Any(Offer)	7248	0
+  ARC	matched	0	EF	O_Refused	O_Sent (mail and online)	Any(Offer)	1659	0
+  ARC	matched	0	EF	O_Refused	O_Returned	Any(Offer)	1659	0
+  ARC	matched	0	EF	A_Cancelled	A_Complete	Any(Application)	3819	0
+  ARC	matched	0	AS	W_Personal Loan collection	W_Shortened completion 	Any(Workflow)	6	0
+  ARC	matched	0	EP	A_Incomplete	A_Pending	Any(Application)	8278	0
+  ARC	matched	0	EF	A_Concept	A_Create Application	Any(Application)	8631	0
+  ARC	matched	0	EF	O_Returned	O_Sent (online only)	Any(Offer)	7306	0
+  ARC	matched	0	EP	A_Create Application	A_Submitted	Any(Application)	8621	0
+  ARC	matched	0	AS	A_Submitted	O_Returned	Any(Case_R)	5614	0
+  ARC	matched	0	AS	O_Sent (mail and online)	O_Sent (online only)	Any(Offer)	10951	0
+  ARC	matched	0	EF	O_Returned	O_Sent (mail and online)	Any(Offer)	7306	0
+  ARC	matched	0	AS	A_Incomplete	A_Submitted	Any(Case_R)	8278	0
+  ARC	matched	0	AS	O_Accepted	O_Refused	Any(Offer)	5739	0
+  ARC	matched	0	AS	A_Submitted	O_Create Offer	Any(Case_R)	5614	0
+  ARC	matched	0	AS	A_Denied	A_Submitted	Any(Case_R)	1349	0
+  ARC	matched	0	EP	A_Complete	A_Denied	Any(Application)	8681	0
+  ARC	matched	0	EF	O_Cancelled	O_Returned	Any(Offer)	7248	0
+  ARC	matched	0	AS	O_Accepted	O_Cancelled	Any(Offer)	5739	0
+  ARC	matched	0	EF	A_Cancelled	A_Validating	Any(Application)	3819	0
+  ARC	matched	0	AS	W_Complete application	W_Personal Loan collection	Any(Case_R,Workflow)	40976	0
+  ARC	matched	0	AS	A_Cancelled	A_Denied	Any(Application)	3819	0
+  ARC	matched	0	EP	W_Call after offers	W_Personal Loan collection	Any(Workflow)	54869	0
+  ARC	matched	0	AS	A_Denied	A_Pending	Any(Application)	1349	0
+  ARC	matched	0	AS	A_Submitted	A_Validating	Any(Case_R)	5614	0
+  ARC	matched	0	EF	O_Cancelled	O_Sent (mail and online)	Any(Offer)	7248	0
+  ARC	matched	0	EF	W_Call after offers	W_Complete application	Any(Workflow)	54869	0
+  ARC	matched	0	EP	W_Call incomplete files	W_Personal Loan collection	Any(Workflow)	60881	0
+  ARC	matched	0	EF	O_Refused	O_Sent (online only)	Any(Offer)	1659	0
+  lost events violating an existence premise themselves: held-out 53384 of 114492, training 77145 of 267055
+tau=0.2 fixed: discovered 457 -> reduced 70; reduced holding on held-out 65 | held-out flagged discovered 162026 reduced 47534 lost 114492 | training flagged discovered 354496 lost 267055 | check time discovered 448.36s reduced 17.63s
+  ARC	fixed	0.2	AS	W_Complete application	W_Handle leads	Any(Case_R,Workflow)	40976	7687
+  ARC	fixed	0.2	AS	A_Pending	A_Validating	Any(Application,Case_R)	5739	234
+  ARC	fixed	0.2	AS	A_Accepted	A_Cancelled	Any(Application,Case_R)	8721	67
+  ARC	fixed	0.2	AS	O_Returned	O_Create Offer	Any(Case_R,Offer)	7306	25
+  ARC	fixed	0.2	AS	W_Personal Loan collection	W_Call after offers	Any(Case_R,Workflow)	6	2
+  ARC	fixed	0.2	AS	W_Call after offers	W_Personal Loan collection	Any(Workflow)	54869	0
+  ARC	fixed	0.2	AS	A_Denied	A_Incomplete	Any(Application,Case_R)	1349	136
+  ARC	fixed	0.2	AS	A_Incomplete	A_Validating	Any(Application,Case_R)	8278	2451
+  ARC	fixed	0.2	AS	A_Accepted	A_Denied	Any(Application)	8721	1126
+  ARC	fixed	0.2	AS	W_Call after offers	W_Call incomplete files	Any(Case_R,Workflow)	54869	3123
+  ARC	fixed	0.2	EF	W_Call after offers	W_Complete application	Any(Workflow)	54869	0
+  ARC	fixed	0.2	AS	O_Accepted	O_Returned	Any(Case_R,Offer)	5739	219
+  ARC	fixed	0.2	EF	A_Create Application	A_Submitted	Any(Application)	8621	5110
+  ARC	fixed	0.2	EF	O_Refused	O_Returned	Any(Offer)	1659	0
+  ARC	fixed	0.2	AS	O_Sent (online only)	O_Sent (mail and online)	Any(Offer)	700	0
+  ARC	fixed	0.2	AS	A_Validating	A_Accepted	Any(Case_R)	12693	2434
+  ARC	fixed	0.2	EF	W_Personal Loan collection	W_Call incomplete files	Any(Workflow)	6	0
+  ARC	fixed	0.2	EF	W_Shortened completion 	W_Assess potential fraud	Any(Case_R)	20	10
+  ARC	fixed	0.2	AS	O_Refused	O_Cancelled	Any(Offer)	1659	0
+  ARC	fixed	0.2	AS	A_Denied	A_Pending	Any(Application)	1349	0
+  ARC	fixed	0.2	EF	A_Denied	A_Validating	Any(Application)	1349	0
+  ARC	fixed	0.2	AS	O_Refused	O_Accepted	Any(Offer)	1659	0
+  ARC	fixed	0.2	EP	W_Handle leads	A_Validating	Any(Case_R)	12840	2438
+  ARC	fixed	0.2	AS	A_Concept	A_Validating	Any(Application,Case_R)	8631	61
+  ARC	fixed	0.2	AS	O_Refused	O_Returned	Any(Case_R,Offer)	1659	3
+  ARC	fixed	0.2	AS	W_Complete application	W_Validate application	Any(Case_R,Workflow)	40976	323
+  ARC	fixed	0.2	EP	O_Sent (online only)	O_Cancelled	Any(Offer)	700	0
+  ARC	fixed	0.2	AS	O_Refused	O_Create Offer	Any(Case_R,Offer)	1659	18
+  ARC	fixed	0.2	EP	A_Cancelled	A_Denied	Any(Case_R)	3819	720
+  ARC	fixed	0.2	EF	A_Cancelled	A_Denied	Any(Case_R)	3819	507
+  ARC	fixed	0.2	AS	W_Shortened completion 	W_Handle leads	Any(Case_R,Workflow)	20	0
+  ARC	fixed	0.2	AS	W_Shortened completion 	W_Call incomplete files	Any(Case_R,Workflow)	20	0
+  ARC	fixed	0.2	EP	A_Create Application	A_Submitted	Any(Application)	8621	0
+  ARC	fixed	0.2	AS	A_Concept	A_Cancelled	Any(Application,Case_R)	8631	1288
+  ARC	fixed	0.2	AS	O_Create Offer	O_Sent (online only)	Any(Offer)	12016	700
+  ARC	fixed	0.2	AS	A_Denied	A_Concept	Any(Application,Case_R)	1349	9
+  ARC	fixed	0.2	AS	W_Assess potential fraud	W_Call after offers	Any(Case_R,Workflow)	1316	123
+  ARC	fixed	0.2	EP	W_Call after offers	W_Validate application	Any(Workflow)	54869	20
+  ARC	fixed	0.2	AS	W_Call after offers	W_Assess potential fraud	Any(Workflow)	54869	619
+  ARC	fixed	0.2	AS	W_Personal Loan collection	W_Call incomplete files	Any(Case_R,Workflow)	6	0
+  ARC	fixed	0.2	AS	W_Call incomplete files	W_Complete application	Any(Case_R,Workflow)	60881	1420
+  ARC	fixed	0.2	AS	W_Call after offers	W_Handle leads	Any(Case_R,Workflow)	54869	7224
+  ARC	fixed	0.2	EF	W_Personal Loan collection	W_Assess potential fraud	Any(Workflow)	6	0
+  ARC	fixed	0.2	AS	A_Accepted	A_Incomplete	Any(Application,Case_R)	8721	48
+  ARC	fixed	0.2	EF	W_Complete application	W_Handle leads	Any(Workflow)	40976	0
+  ARC	fixed	0.2	AS	O_Accepted	O_Create Offer	Any(Case_R,Offer)	5739	24
+  ARC	fixed	0.2	AS	W_Personal Loan collection	W_Complete application	Any(Case_R,Workflow)	6	0
+  ARC	fixed	0.2	EP	O_Sent (online only)	O_Returned	Any(Offer)	700	0
+  ARC	fixed	0.2	AS	A_Pending	A_Concept	Any(Application,Case_R)	5739	30
+  ARC	fixed	0.2	AS	A_Denied	W_Handle leads	Any(Case_R)	1349	248
+  ARC	fixed	0.2	AS	W_Shortened completion 	W_Validate application	Any(Case_R,Workflow)	20	0
+  ARC	fixed	0.2	EF	W_Personal Loan collection	W_Validate application	Any(Case_R,Workflow)	6	0
+  ARC	fixed	0.2	AS	A_Denied	A_Validating	Any(Application,Case_R)	1349	8
+  ARC	fixed	0.2	AS	A_Accepted	A_Pending	Any(Case_R)	8721	250
+  ARC	fixed	0.2	EF	A_Denied	A_Incomplete	Any(Application)	1349	0
+  ARC	fixed	0.2	AS	W_Assess potential fraud	W_Call incomplete files	Any(Case_R,Workflow)	1316	113
+  ARC	fixed	0.2	AS	O_Create Offer	O_Refused	Any(Offer)	12016	1404
+  ARC	fixed	0.2	AS	A_Accepted	A_Validating	Any(Application,Case_R)	8721	81
+  ARC	fixed	0.2	AS	A_Concept	A_Incomplete	Any(Application,Case_R)	8631	47
+  ARC	fixed	0.2	AS	O_Cancelled	O_Create Offer	Any(Case_R,Offer)	7248	412
+  ARC	fixed	0.2	EF	A_Concept	A_Create Application	Any(Application)	8631	0
+  ARC	fixed	0.2	AS	A_Denied	A_Accepted	Any(Application,Case_R)	1349	20
+  ARC	fixed	0.2	AS	W_Assess potential fraud	W_Complete application	Any(Case_R,Workflow)	1316	137
+  ARC	fixed	0.2	EF	A_Accepted	W_Shortened completion 	Any(Case_R)	8721	369
+  ARC	fixed	0.2	AS	W_Call after offers	W_Shortened completion 	Any(Workflow)	54869	22
+  ARC	fixed	0.2	AS	O_Cancelled	O_Returned	Any(Offer)	7248	841
+  ARC	fixed	0.2	EP	A_Accepted	W_Assess potential fraud	Any(Case_R)	8721	2188
+  ARC	fixed	0.2	AS	W_Call after offers	W_Validate application	Any(Case_R,Workflow)	54869	7119
+  ARC	fixed	0.2	AS	A_Pending	A_Accepted	Any(Application,Case_R)	5739	30
+  ARC	fixed	0.2	AS	A_Cancelled	A_Incomplete	Any(Application)	3819	342

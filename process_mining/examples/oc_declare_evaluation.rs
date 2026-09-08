@@ -1,3 +1,9 @@
+//! Discovery and reduction timings for OC-DECLARE existence models over a directory of OCEL
+//! 2.0 logs, whose file names are hard-coded in `main`.
+//!
+//! Usage:
+//!   cargo run --release --example oc_declare_evaluation -- <directory-of-ocel-logs>
+
 use std::{collections::HashMap, env, fs::File, hint::black_box, path::PathBuf, time::Instant};
 
 use process_mining::{

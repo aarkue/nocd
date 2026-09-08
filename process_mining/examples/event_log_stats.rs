@@ -1,3 +1,8 @@
+//! Trace, event and attribute counts of an XES event log.
+//!
+//! Usage:
+//!   cargo run --release --example event_log_stats -- <log.xes>
+
 use process_mining::{EventLog, Importable};
 use std::env;
 use std::error::Error;

@@ -420,6 +420,14 @@ impl<'b> OCDeclareArcLabel {
     ///
     /// Bindings correspond to all scenarios for which the constraint has to be checked.
     /// In particular, there are multiple bindings for an event if there are multiple objects of a type that is included with EACH involvement.
+    ///
+    /// A type the event carries no object of is dropped rather than turned into a filter over an
+    /// empty object list. The semantics makes such a type inert: the EACH quantifier ranges only
+    /// over the types actually carried, an ALL containment out of the empty set holds of every
+    /// target event, and an ANY conjunct is guarded on the source carrying the type. An empty
+    /// filter would instead yield an empty target-event iterator (as the seed, and through
+    /// `SetFilter::check` for ANY), which reports a negative constraint as vacuously satisfied
+    /// where it is in fact violated, and a `min`-count constraint as violated where it holds.
     pub fn get_bindings<'a>(
         &'a self,
         ev: &'a EventOrSynthetic,
@@ -436,6 +444,7 @@ impl<'b> OCDeclareArcLabel {
                 }
             })
             .map(|otass| otass.get_for_ev(ev, linked_ocel))
+            .filter(|objs| !objs.is_empty())
             .multi_cartesian_product()
             .map(|product| {
                 self.all
@@ -448,7 +457,9 @@ impl<'b> OCDeclareArcLabel {
                             -(linked_ocel.get_obs_of_type(second).count() as i32)
                         }
                     })
-                    .map(|otass| SetFilter::All(otass.get_for_ev(ev, linked_ocel)))
+                    .map(|otass| otass.get_for_ev(ev, linked_ocel))
+                    .filter(|objs| !objs.is_empty())
+                    .map(SetFilter::All)
                     .chain(if product.is_empty() {
                         Vec::default()
                     } else {
@@ -465,8 +476,9 @@ impl<'b> OCDeclareArcLabel {
                                     -(linked_ocel.get_obs_of_type(second).count() as i32)
                                 }
                             })
-                            .map(|otass| {
-                                let x = otass.get_for_ev(ev, linked_ocel);
+                            .map(|otass| otass.get_for_ev(ev, linked_ocel))
+                            .filter(|x| !x.is_empty())
+                            .map(|x| {
                                 if x.len() == 1 {
                                     SetFilter::All(x)
                                 } else {
@@ -513,11 +525,15 @@ pub fn get_activity_object_involvements(
                 .map(|ot| (ot.to_string(), ObjectInvolvementCounts::default()))
                 .collect();
             for ev in locel.get_evs_of_type(et) {
-                let mut num_of_objects_for_ev: HashMap<&str, usize> = HashMap::new();
+                // an object can appear more than once per event via distinct qualifiers;
+                // count unique objects, not raw relationships
+                let mut objs_for_ev: HashMap<&str, HashSet<&ObjectIndex>> = HashMap::new();
                 for oi in ev.get_e2o(locel) {
                     let ot = oi.get_ob_type(locel);
-                    *num_of_objects_for_ev.entry(ot).or_default() += 1;
+                    objs_for_ev.entry(ot).or_default().insert(oi);
                 }
+                let num_of_objects_for_ev: HashMap<&str, usize> =
+                    objs_for_ev.into_iter().map(|(ot, obs)| (ot, obs.len())).collect();
                 for (ot, count) in num_of_objects_for_ev {
                     let num_ob_per_type = nums_of_objects_per_type.get_mut(ot).unwrap();
 
@@ -538,6 +554,162 @@ pub fn get_activity_object_involvements(
             )
         })
         .collect()
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
+/// How many distinct objects of a type the events of an activity carry.
+///
+/// This is the precondition for the object-involvement dimension to have any
+/// content: where no event of an activity carries two or more distinct objects
+/// of a type, `All`, `Each` and `Any` impose the identical filter there, so
+/// which level a discovery procedure reports is arbitrary.
+pub struct ObjectMultiplicity {
+    /// Number of events of the activity.
+    pub events: usize,
+    /// Events carrying at least one object of the type.
+    pub carrying: usize,
+    /// Events carrying two or more *distinct* objects of the type.
+    pub converging: usize,
+    /// Largest number of distinct objects of the type on a single event.
+    pub max: usize,
+}
+
+impl ObjectMultiplicity {
+    /// Whether `All`, `Each` and `Any` can differ at this activity and type.
+    pub fn levels_distinguishable(&self) -> bool {
+        self.converging > 0
+    }
+    /// Whether some event of the activity carries none of the type, which makes
+    /// the involvement vacuous at those events.
+    pub fn partially_carried(&self) -> bool {
+        self.carrying > 0 && self.carrying < self.events
+    }
+}
+
+/// Get the distribution of object counts per activity and object type.
+///
+/// Like [`get_activity_object_involvements`] this counts *distinct* objects: an
+/// event may reference the same object under several qualifiers, and counting
+/// relationships instead would inflate the multiplicity.
+///
+/// Object types no event of the activity carries are omitted.
+pub fn get_activity_object_multiplicity(
+    locel: &SlimLinkedOCEL,
+) -> HashMap<String, HashMap<String, ObjectMultiplicity>> {
+    locel
+        .get_ev_types()
+        .map(|et| {
+            let mut per_type: HashMap<String, ObjectMultiplicity> = locel
+                .get_ob_types()
+                .map(|ot| (ot.to_string(), ObjectMultiplicity::default()))
+                .collect();
+            let mut n_events = 0usize;
+            for ev in locel.get_evs_of_type(et) {
+                n_events += 1;
+                let mut objs_for_ev: HashMap<&str, HashSet<&ObjectIndex>> = HashMap::new();
+                for oi in ev.get_e2o(locel) {
+                    objs_for_ev
+                        .entry(oi.get_ob_type(locel))
+                        .or_default()
+                        .insert(oi);
+                }
+                for (ot, obs) in objs_for_ev {
+                    let m = per_type.get_mut(ot).unwrap();
+                    m.carrying += 1;
+                    if obs.len() >= 2 {
+                        m.converging += 1;
+                    }
+                    if obs.len() > m.max {
+                        m.max = obs.len();
+                    }
+                }
+            }
+            for m in per_type.values_mut() {
+                m.events = n_events;
+            }
+            (
+                et.to_string(),
+                per_type
+                    .into_iter()
+                    .filter(|(_, m)| m.carrying > 0)
+                    .collect(),
+            )
+        })
+        .collect()
+}
+
+/// Get the multiplicity per activity over arbitrary object type associations,
+/// including the transitive (O2O) ones.
+///
+/// [`get_activity_object_multiplicity`] covers only direct object types, which
+/// is not what the involvement dimension ranges over: a constraint may involve
+/// `(ot1 > ot2)`, the `ot2`-objects reachable from the event's `ot1`-objects. On
+/// a log converted from case-centric data every event typically carries exactly
+/// one object of each type, so the direct multiplicity is 1 everywhere while the
+/// transitive multiplicity need not be.
+///
+/// Counts distinct objects. Associations no event of the activity resolves to
+/// anything are omitted, keyed by [`ObjectTypeAssociation::as_template_string`].
+pub fn get_activity_association_multiplicity(
+    locel: &SlimLinkedOCEL,
+    associations: &[ObjectTypeAssociation],
+) -> HashMap<String, HashMap<String, ObjectMultiplicity>> {
+    locel
+        .get_ev_types()
+        .map(|et| {
+            let mut per_assoc: HashMap<String, ObjectMultiplicity> = associations
+                .iter()
+                .map(|a| (a.as_template_string(), ObjectMultiplicity::default()))
+                .collect();
+            let mut n_events = 0usize;
+            for ev in locel.get_evs_of_type(et) {
+                n_events += 1;
+                let ev = EventOrSynthetic::Event(*ev);
+                for assoc in associations {
+                    let distinct: HashSet<&ObjectIndex> =
+                        assoc.get_for_ev(&ev, locel).into_iter().collect();
+                    if distinct.is_empty() {
+                        continue;
+                    }
+                    let m = per_assoc.get_mut(&assoc.as_template_string()).unwrap();
+                    m.carrying += 1;
+                    if distinct.len() >= 2 {
+                        m.converging += 1;
+                    }
+                    if distinct.len() > m.max {
+                        m.max = distinct.len();
+                    }
+                }
+            }
+            for m in per_assoc.values_mut() {
+                m.events = n_events;
+            }
+            (
+                et.to_string(),
+                per_assoc
+                    .into_iter()
+                    .filter(|(_, m)| m.carrying > 0)
+                    .collect(),
+            )
+        })
+        .collect()
+}
+
+/// All object type associations over the types of the log: every direct type,
+/// and every ordered pair in both O2O directions.
+pub fn all_object_type_associations(locel: &SlimLinkedOCEL) -> Vec<ObjectTypeAssociation> {
+    let types: Vec<String> = locel.get_ob_types().map(|t| t.to_string()).collect();
+    let mut out: Vec<ObjectTypeAssociation> = types
+        .iter()
+        .map(|t| ObjectTypeAssociation::new_simple(t.clone()))
+        .collect();
+    for a in &types {
+        for b in &types {
+            out.push(ObjectTypeAssociation::new_o2o(a.clone(), b.clone()));
+            out.push(ObjectTypeAssociation::new_o2o_rev(a.clone(), b.clone()));
+        }
+    }
+    out
 }
 
 /// Get Object-to-Object Involvements in the passed OCEL
@@ -625,6 +797,70 @@ pub fn get_rev_object_to_object_involvements(
         })
         .collect()
 }
+/// Extra per-(activity, object type) facts negative-constraint rules need, beyond min/max
+/// counts: whether every event carries the type at all, and whether the type is unique
+/// per event of the activity.
+#[derive(Debug, Clone, Copy, Default)]
+pub struct ActivityObjectFacts {
+    /// Every event of the activity carries at least one object of this type.
+    pub always_present: bool,
+    /// No object of this type occurs in more than one event of the activity.
+    pub at_most_one_event_per_object: bool,
+}
+
+/// Get [`ActivityObjectFacts`] per activity and object type.
+///
+/// Only includes `(activity, object type)` pairs the activity carries at least once —
+/// missing means the type never occurs there.
+pub fn get_activity_object_facts(
+    locel: &SlimLinkedOCEL,
+) -> HashMap<String, HashMap<String, ActivityObjectFacts>> {
+    locel
+        .get_ev_types()
+        .map(|et| {
+            let evs: Vec<_> = locel.get_evs_of_type(et).collect();
+            let mut present_count: HashMap<String, usize> = HashMap::new();
+            let mut per_object_event_count: HashMap<(String, ObjectIndex), usize> = HashMap::new();
+            for ev in &evs {
+                // an object can appear more than once per event via distinct qualifiers;
+                // dedupe within this event before counting either fact
+                let mut objs_here: HashSet<(String, ObjectIndex)> = HashSet::new();
+                for oi in ev.get_e2o(locel) {
+                    objs_here.insert((oi.get_ob_type(locel).to_string(), *oi));
+                }
+                for (ot, oi) in &objs_here {
+                    *per_object_event_count.entry((ot.clone(), *oi)).or_default() += 1;
+                }
+                let types_here: HashSet<String> = objs_here.into_iter().map(|(ot, _)| ot).collect();
+                for ot in types_here {
+                    *present_count.entry(ot).or_default() += 1;
+                }
+            }
+            let mut max_events_per_object: HashMap<String, usize> = HashMap::new();
+            for ((ot, _), count) in &per_object_event_count {
+                let m = max_events_per_object.entry(ot.clone()).or_default();
+                *m = (*m).max(*count);
+            }
+            let facts = present_count
+                .into_iter()
+                .map(|(ot, count)| {
+                    let always_present = count == evs.len();
+                    let at_most_one_event_per_object =
+                        max_events_per_object.get(&ot).copied().unwrap_or(0) <= 1;
+                    (
+                        ot,
+                        ActivityObjectFacts {
+                            always_present,
+                            at_most_one_event_per_object,
+                        },
+                    )
+                })
+                .collect();
+            (et.to_string(), facts)
+        })
+        .collect()
+}
+
 /// Represents either a regular event or a synthetic initialization/exit event for an object.
 ///
 /// This enum is used to model synthetic events (as source or target) for OC-DECLARE constraints, which can be activated by
@@ -761,5 +997,157 @@ impl EventOrSynthetic {
             .map(|e| Self::Event(*e))
             .chain(vec![Self::Init(ob), Self::Exit(ob)])
             .collect()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::core::event_data::object_centric::{
+        appendable::AppendableOCEL, OCELRelationship, OCELType,
+    };
+    use chrono::DateTime;
+
+    fn empty_type(name: &str) -> OCELType {
+        OCELType {
+            name: name.into(),
+            attributes: Vec::new(),
+        }
+    }
+
+    fn rel(object_id: &str) -> OCELRelationship {
+        OCELRelationship {
+            object_id: object_id.into(),
+            qualifier: "q".into(),
+        }
+    }
+
+    /// `place` always carries `order`; `o1` occurs in two `place` events (not unique).
+    /// `pay` carries `order` on some events but not all (not always-present), always exactly one.
+    fn sample_locel() -> SlimLinkedOCEL {
+        let mut s = SlimLinkedOCEL::new();
+        s.declare_event_type(empty_type("place")).unwrap();
+        s.declare_event_type(empty_type("pay")).unwrap();
+        s.declare_object_type(empty_type("order")).unwrap();
+        for id in ["o1", "o2"] {
+            s.append_object(id.into(), "order", Vec::new(), Vec::new())
+                .unwrap();
+        }
+        let t = |i: u32| DateTime::parse_from_rfc3339(&format!("2024-01-0{i}T00:00:00Z")).unwrap();
+        s.append_event("e0".into(), "place", t(1), Vec::new(), vec![rel("o1")])
+            .unwrap();
+        s.append_event("e1".into(), "place", t(2), Vec::new(), vec![rel("o1")])
+            .unwrap();
+        s.append_event("e2".into(), "place", t(3), Vec::new(), vec![rel("o2")])
+            .unwrap();
+        s.append_event("e3".into(), "pay", t(4), Vec::new(), vec![rel("o1")])
+            .unwrap();
+        s.append_event("e4".into(), "pay", t(5), Vec::new(), Vec::new())
+            .unwrap();
+        s.finalize().unwrap();
+        s
+    }
+
+    #[test]
+    fn facts_match_manual_computation() {
+        let locel = sample_locel();
+        let facts = get_activity_object_facts(&locel);
+
+        let place = facts.get("place").unwrap().get("order").unwrap();
+        assert!(place.always_present);
+        assert!(!place.at_most_one_event_per_object); // o1 occurs in e0 and e1
+
+        let pay = facts.get("pay").unwrap().get("order").unwrap();
+        assert!(!pay.always_present); // e4 carries no order
+        assert!(pay.at_most_one_event_per_object);
+    }
+
+    /// Two `place` events carry two distinct orders each, one carries a single
+    /// order; every `pay` event carries at most one. So the involvement levels
+    /// can differ at (`place`, `order`) and provably cannot at (`pay`, `order`).
+    fn multiplicity_locel() -> SlimLinkedOCEL {
+        let mut s = SlimLinkedOCEL::new();
+        s.declare_event_type(empty_type("place")).unwrap();
+        s.declare_event_type(empty_type("pay")).unwrap();
+        s.declare_object_type(empty_type("order")).unwrap();
+        for id in ["o1", "o2", "o3"] {
+            s.append_object(id.into(), "order", Vec::new(), Vec::new())
+                .unwrap();
+        }
+        let t = |i: u32| DateTime::parse_from_rfc3339(&format!("2024-01-0{i}T00:00:00Z")).unwrap();
+        s.append_event(
+            "p1".into(),
+            "place",
+            t(1),
+            Vec::new(),
+            vec![rel("o1"), rel("o2")],
+        )
+        .unwrap();
+        s.append_event("p2".into(), "place", t(2), Vec::new(), vec![rel("o3")])
+            .unwrap();
+        // the same object under two qualifiers is still one object
+        s.append_event(
+            "y1".into(),
+            "pay",
+            t(3),
+            Vec::new(),
+            vec![
+                rel("o1"),
+                OCELRelationship {
+                    object_id: "o1".into(),
+                    qualifier: "other".into(),
+                },
+            ],
+        )
+        .unwrap();
+        s.append_event("y2".into(), "pay", t(4), Vec::new(), Vec::new())
+            .unwrap();
+        s.finalize().unwrap();
+        s
+    }
+
+    #[test]
+    fn multiplicity_counts_distinct_objects_not_relationships() {
+        let m = get_activity_object_multiplicity(&multiplicity_locel());
+
+        let place = m.get("place").unwrap().get("order").unwrap();
+        assert_eq!(place.events, 2);
+        assert_eq!(place.carrying, 2);
+        assert_eq!(place.converging, 1); // only p1
+        assert_eq!(place.max, 2);
+        assert!(place.levels_distinguishable());
+        assert!(!place.partially_carried());
+
+        let pay = m.get("pay").unwrap().get("order").unwrap();
+        assert_eq!(pay.events, 2);
+        assert_eq!(pay.carrying, 1); // y2 carries none
+        // y1 references o1 twice under distinct qualifiers; that is one object
+        assert_eq!(pay.converging, 0);
+        assert_eq!(pay.max, 1);
+        assert!(!pay.levels_distinguishable());
+        assert!(pay.partially_carried());
+    }
+
+    #[test]
+    fn multiplicity_omits_types_no_event_of_the_activity_carries() {
+        let mut s = multiplicity_locel_with_unused_type();
+        s.finalize().ok();
+        let m = get_activity_object_multiplicity(&s);
+        assert!(m.get("place").unwrap().get("unused").is_none());
+    }
+
+    fn multiplicity_locel_with_unused_type() -> SlimLinkedOCEL {
+        let mut s = SlimLinkedOCEL::new();
+        s.declare_event_type(empty_type("place")).unwrap();
+        s.declare_object_type(empty_type("order")).unwrap();
+        s.declare_object_type(empty_type("unused")).unwrap();
+        s.append_object("o1".into(), "order", Vec::new(), Vec::new())
+            .unwrap();
+        s.append_object("u1".into(), "unused", Vec::new(), Vec::new())
+            .unwrap();
+        let t = DateTime::parse_from_rfc3339("2024-01-01T00:00:00Z").unwrap();
+        s.append_event("p1".into(), "place", t, Vec::new(), vec![rel("o1")])
+            .unwrap();
+        s
     }
 }

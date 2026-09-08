@@ -1,0 +1,49 @@
+### p2p
+=== ocel2-p2p.xml ===
+  loaded: 14671 events, 9543 objects (180.09813ms)
+  linked: 23.509993ms
+  existence: 32 arcs (26.405556ms)
+  wrote rerun/p2p/ocel2-p2p-existence.json
+  tau=0: discovered 42 -> reduced 3 (discover 28.720456ms, reduce 15.925375ms)
+  wrote rerun/p2p/ocel2-p2p-negative-tau0.json
+  tau=0.2: discovered 49 -> reduced 6 (discover 54.020011ms, reduce 20.656044ms)
+  wrote rerun/p2p/ocel2-p2p-negative-tau0.2.json
+
+  rho  exist. exist.red   disc. neg.red  mixed
+    0      31        21      42      3     24   (94.776589ms)
+  0.2      32        19      49      6     25   (122.284184ms)
+
+== ocel2-p2p.xml ==
+existence model: 32 arcs (arrows: AS,EF,EP)
+--- tau = 0 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5       14     33.3%
+                7. rule B / B'       22     52.4%
+          8. orientation dedup        3      7.1%
+                         total       39     92.9%
+                    model size 42 -> 3
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored       11               10
+            4. target-anchored       11               10
+     5. object-set equivalence        6                6
+
+--- tau = 0.2 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5       19     38.8%
+                7. rule B / B'       20     40.8%
+          8. orientation dedup        4      8.2%
+                         total       43     87.8%
+                    model size 49 -> 6
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored       21               16
+            4. target-anchored       16               14
+     5. object-set equivalence       10                8
+

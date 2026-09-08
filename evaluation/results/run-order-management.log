@@ -1,0 +1,49 @@
+### order-management
+=== order-management.xml ===
+  loaded: 21008 events, 10840 objects (89.331715ms)
+  linked: 28.190954ms
+  existence: 220 arcs (1.586487212s)
+  wrote rerun/order-management/order-management-existence.json
+  tau=0: discovered 130 -> reduced 4 (discover 1.731135526s, reduce 85.504095ms)
+  wrote rerun/order-management/order-management-negative-tau0.json
+  tau=0.2: discovered 220 -> reduced 31 (discover 2.355263765s, reduce 85.583498ms)
+  wrote rerun/order-management/order-management-negative-tau0.2.json
+
+  rho  exist. exist.red   disc. neg.red  mixed
+    0     154        50     130      8     58   (5.549508297s)
+  0.2     220        73     220     31    104   (5.683796855s)
+
+== order-management.xml ==
+existence model: 220 arcs (arrows: AS,EF,EP)
+--- tau = 0 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5       80     61.5%
+                7. rule B / B'       44     33.8%
+          8. orientation dedup        2      1.5%
+                         total      126     96.9%
+                    model size 130 -> 4
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored      155               67
+            4. target-anchored      155               67
+     5. object-set equivalence       31               27
+
+--- tau = 0.2 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5      136     61.8%
+                7. rule B / B'       42     19.1%
+          8. orientation dedup       11      5.0%
+                         total      189     85.9%
+                    model size 220 -> 31
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored      211               85
+            4. target-anchored      271              110
+     5. object-set equivalence      233               66
+

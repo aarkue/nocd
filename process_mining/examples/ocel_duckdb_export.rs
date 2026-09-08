@@ -1,3 +1,8 @@
+//! Export an OCEL to a DuckDB database next to the input file.
+//!
+//! Usage:
+//!   cargo run --release --example ocel_duckdb_export -- <log>
+
 use std::{collections::HashSet, env::args, path::PathBuf};
 
 use process_mining::{Exportable, Importable, OCEL};

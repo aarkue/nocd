@@ -1,0 +1,72 @@
+== order-management.xml
+cut 2023-12-13 10:53:11 +00:00: 14705 training events of 21008
+held-out source events 6303; structural properties broken on full log: 4 of 66 multiplicities, 0 of 15 uniqueness
+existence rho=0: 131 arcs, 131 hold on held-out at rho
+existence rho=0.2: 223 arcs, 207 hold on held-out at rho
+  lost events violating an existence premise themselves: held-out 0 of 0, training 0 of 0
+tau=0 fixed: discovered 134 -> reduced 5; reduced holding on held-out 4 | held-out flagged discovered 1 reduced 1 lost 0 | training flagged discovered 0 lost 0 | check time discovered 0.05s reduced 0.00s
+  ARC	fixed	0	AS	create package	failed delivery	Any(employees)	348	0
+  ARC	fixed	0	EP	failed delivery	payment reminder	All(items)	93	0
+  ARC	fixed	0	AS	confirm order	send package	Any(employees)	605	0
+  ARC	fixed	0	EP	failed delivery	payment reminder	All(products), Any(items)	93	0
+  ARC	fixed	0	EF	payment reminder	failed delivery	All(products), Any(items)	208	1
+  lost events violating an existence premise themselves: held-out 0 of 0, training 0 of 0
+tau=0 matched: discovered 134 -> reduced 21; reduced holding on held-out 17 | held-out flagged discovered 1 reduced 1 lost 0 | training flagged discovered 0 lost 0 | check time discovered 0.05s reduced 0.01s
+  ARC	matched	0	EF	pay order	payment reminder	Any(items)	676	0
+  ARC	matched	0	EF	payment reminder	failed delivery	All(items)	208	1
+  ARC	matched	0	EF	payment reminder	create package	All(items)	208	0
+  ARC	matched	0	EF	create package	item out of stock	Any(items)	348	0
+  ARC	matched	0	AS	confirm order	send package	Any(employees)	605	0
+  ARC	matched	0	AS	create package	failed delivery	Any(employees)	348	0
+  ARC	matched	0	EP	item out of stock	pick item	Any(items)	408	0
+  ARC	matched	0	EP	failed delivery	payment reminder	All(items)	93	0
+  ARC	matched	0	EP	failed delivery	payment reminder	All(products), Any(items)	93	0
+  ARC	matched	0	EF	pick item	reorder item	Any(items)	2244	0
+  ARC	matched	0	EF	payment reminder	reorder item	Any(items)	208	0
+  ARC	matched	0	EF	failed delivery	confirm order	All(items)	93	0
+  ARC	matched	0	EF	create package	pick item	Any(items)	348	0
+  ARC	matched	0	EF	payment reminder	failed delivery	All(products), Any(items)	208	1
+  ARC	matched	0	EP	item out of stock	payment reminder	Any(items)	408	0
+  ARC	matched	0	EF	payment reminder	package delivered	All(items)	208	1
+  ARC	matched	0	EF	payment reminder	send package	All(items)	208	1
+  ARC	matched	0	EF	pay order	payment reminder	Any(orders)	676	0
+  ARC	matched	0	EP	failed delivery	package delivered	Any(packages)	93	0
+  ARC	matched	0	EP	failed delivery	package delivered	Any(items)	93	0
+  ARC	matched	0	EF	create package	reorder item	Any(items)	348	0
+  lost events violating an existence premise themselves: held-out 462 of 960, training 815 of 2259
+tau=0.2 fixed: discovered 228 -> reduced 35; reduced holding on held-out 30 | held-out flagged discovered 3148 reduced 2188 lost 960 | training flagged discovered 7177 lost 2259 | check time discovered 0.30s reduced 0.08s
+  ARC	fixed	0.2	EP	pay order	failed delivery	Any(items)	676	127
+  ARC	fixed	0.2	AS	reorder item	send package	Any(employees,items)	414	53
+  ARC	fixed	0.2	AS	create package	failed delivery	Any(items)	348	66
+  ARC	fixed	0.2	AS	item out of stock	reorder item	Any(employees,items)	408	59
+  ARC	fixed	0.2	AS	pick item	send package	Any(employees,items)	2244	323
+  ARC	fixed	0.2	AS	reorder item	pick item	Any(employees,items)	414	44
+  ARC	fixed	0.2	AS	confirm order	send package	Any(employees)	605	0
+  ARC	fixed	0.2	EF	pay order	failed delivery	Any(items)	676	114
+  ARC	fixed	0.2	AS	create package	send package	Any(employees,packages)	348	46
+  ARC	fixed	0.2	EP	send package	failed delivery	All(products), Any(employees)	350	82
+  ARC	fixed	0.2	EF	pay order	send package	All(products), Any(items)	676	123
+  ARC	fixed	0.2	AS	create package	item out of stock	Any(employees,items)	348	54
+  ARC	fixed	0.2	EF	send package	create package	All(products), Any(employees)	350	53
+  ARC	fixed	0.2	EP	package delivered	payment reminder	All(products)	355	102
+  ARC	fixed	0.2	EF	pay order	reorder item	Any(items)	676	70
+  ARC	fixed	0.2	AS	create package	reorder item	Any(employees,items)	348	59
+  ARC	fixed	0.2	AS	create package	send package	Any(employees,items)	348	46
+  ARC	fixed	0.2	AS	failed delivery	confirm order	All(items)	93	6
+  ARC	fixed	0.2	AS	confirm order	failed delivery	All(items)	605	35
+  ARC	fixed	0.2	AS	item out of stock	pick item	Any(employees,items)	408	56
+  ARC	fixed	0.2	AS	confirm order	failed delivery	All(products), Any(items)	605	59
+  ARC	fixed	0.2	AS	create package	failed delivery	Any(packages)	348	66
+  ARC	fixed	0.2	AS	payment reminder	create package	All(items)	208	54
+  ARC	fixed	0.2	AS	pick item	create package	Any(employees,items)	2244	325
+  ARC	fixed	0.2	AS	create package	failed delivery	Any(employees)	348	0
+  ARC	fixed	0.2	EP	pay order	create package	All(items)	676	152
+  ARC	fixed	0.2	AS	payment reminder	failed delivery	All(products), Any(items)	208	15
+  ARC	fixed	0.2	EF	pay order	package delivered	All(items)	676	86
+  ARC	fixed	0.2	AS	create package	confirm order	All(items)	348	24
+  ARC	fixed	0.2	AS	create package	confirm order	All(products), Any(items)	348	44
+  ARC	fixed	0.2	AS	failed delivery	confirm order	All(products), Any(items)	93	12
+  ARC	fixed	0.2	EF	package delivered	failed delivery	All(products), Any(employees)	355	18
+  ARC	fixed	0.2	AS	pick item	item out of stock	Any(items)	2244	468
+  ARC	fixed	0.2	AS	item out of stock	send package	Any(employees,items)	408	57
+  ARC	fixed	0.2	EF	create package	payment reminder	All(products)	348	57

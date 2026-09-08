@@ -1,0 +1,49 @@
+### bpic2017
+=== bpic2017-ocel2.json ===
+  loaded: 1202267 events, 106162 objects (21.17676107s)
+  linked: 2.148481681s
+  existence: 678 arcs (91.945998888s)
+  wrote rerun/bpic2017/bpic2017-ocel2-existence.json
+  tau=0: discovered 212 -> reduced 28 (discover 11.493018832s, reduce 1.556318813s)
+  wrote rerun/bpic2017/bpic2017-ocel2-negative-tau0.json
+  tau=0.2: discovered 453 -> reduced 69 (discover 436.515841918s, reduce 1.60013926s)
+  wrote rerun/bpic2017/bpic2017-ocel2-negative-tau0.2.json
+
+  rho  exist. exist.red   disc. neg.red  mixed
+    0     116        73     212     44    117   (48.75934063s)
+  0.2     678       110     453     69    179   (665.719969134s)
+
+== bpic2017-ocel2.json ==
+existence model: 678 arcs (arrows: AS,EF,EP)
+--- tau = 0 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5      128     60.4%
+                7. rule B / B'       28     13.2%
+          8. orientation dedup       28     13.2%
+                         total      184     86.8%
+                    model size 212 -> 28
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored      345              100
+            4. target-anchored      345              100
+     5. object-set equivalence       65               39
+
+--- tau = 0.2 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5      338     74.6%
+                7. rule B / B'       26      5.7%
+          8. orientation dedup       20      4.4%
+                         total      384     84.8%
+                    model size 453 -> 69
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored     2176              280
+            4. target-anchored      721              226
+     5. object-set equivalence      194               90
+
