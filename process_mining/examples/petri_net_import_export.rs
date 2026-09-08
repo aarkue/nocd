@@ -1,3 +1,8 @@
+//! Import a Petri net from PNML, print its size, and write it out again.
+//!
+//! Usage:
+//!   cargo run --release --example petri_net_import_export -- <in.pnml> <out.pnml>
+
 use process_mining::{Exportable, Importable, PetriNet};
 use std::env;
 use std::error::Error;

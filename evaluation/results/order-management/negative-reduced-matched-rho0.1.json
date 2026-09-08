@@ -1,0 +1,687 @@
+[
+  {
+    "from": "confirm order",
+    "to": "send package",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "employees"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "package delivered",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "failed delivery",
+    "to": "item out of stock",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "create package",
+    "to": "payment reminder",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "send package",
+    "to": "create package",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "employees"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "create package",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "failed delivery",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "create package",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "reorder item",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "failed delivery",
+    "to": "payment reminder",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "create package",
+    "to": "item out of stock",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "package delivered",
+    "to": "payment reminder",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "create package",
+    "to": "failed delivery",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "employees"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "create package",
+    "to": "confirm order",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "send package",
+    "to": "failed delivery",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "employees"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "item out of stock",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "reorder item",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "pick item",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "package delivered",
+    "to": "pay order",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "pick item",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "failed delivery",
+    "to": "pay order",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "package delivered",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "pay order",
+    "to": "send package",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "pick item",
+    "to": "reorder item",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "employees"
+        },
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "item out of stock",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "pick item",
+    "to": "item out of stock",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "employees"
+        },
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "failed delivery",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "failed delivery",
+    "to": "confirm order",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "create package",
+    "to": "pay order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "failed delivery",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "payment reminder",
+    "to": "failed delivery",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "confirm order",
+    "to": "failed delivery",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "failed delivery",
+    "to": "pay order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "items"
+        }
+      ],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "products"
+        }
+      ]
+    },
+    "counts": [
+      0,
+      0
+    ]
+  }
+]

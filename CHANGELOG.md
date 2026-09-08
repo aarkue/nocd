@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Negative OC-DECLARE (`n_min = n_max = 0`) discovery and mixed-model reduction (`discovery::object_centric::oc_declare::negative`):
+  - `discover_negative_oc_declare` searches arrow types and object involvements jointly and reports the minimal satisfied constraints, pruned by conditional support (satisfied over testable source events)
+  - `reduce_negative_oc_declare` / `reduce_negative_oc_declare_traced` reduce a negative model against a caller-supplied existence model: cardinality entailment, within-pair domination, source- and target-anchored composition and object-set equivalence condensed as one entailment digraph, rule B/B', and orientation dedup; the traced variant returns per-stage removal counts
+  - `precision`, `closure`, `candidate_table` and the other items of `negative::quality` measure a negative model against the candidate space
+  - Evaluation drivers under `process_mining/examples/` (`neg_datasets`, `neg_diagonal_models`, `neg_reduction_stages`, and the verification examples), documented in `evaluation/README.md`
 - Fixed a regression in OC-DECLARE discovery/conformance runtime performance:
   - Now builds and construct a reverse-E2O index grouped by event type
   - OC-DECLARE internals are no longer public; their arguments could only be produced by other internals (**Breaking**)

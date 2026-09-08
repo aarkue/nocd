@@ -1,0 +1,2218 @@
+[
+  {
+    "from": "A_Complete",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Create Application",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Call incomplete files",
+    "to": "W_Validate application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Call after offers",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Call after offers",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Call incomplete files",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Complete application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Validate application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Validate application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Personal Loan collection",
+    "to": "W_Validate application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Shortened completion ",
+    "to": "A_Denied",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Shortened completion ",
+    "to": "W_Call after offers",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Shortened completion ",
+    "to": "W_Call incomplete files",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Shortened completion ",
+    "to": "W_Complete application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Validate application",
+    "to": "W_Call after offers",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Cancelled",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Created",
+    "to": "O_Create Offer",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        },
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Refused",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Returned",
+    "to": "A_Validating",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (online only)",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (online only)",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (online only)",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (online only)",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (online only)",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Call after offers",
+    "to": "W_Complete application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Call incomplete files",
+    "to": "W_Complete application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Cancelled",
+    "to": "A_Accepted",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Complete",
+    "to": "W_Complete application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Create Application",
+    "to": "A_Concept",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Create Application",
+    "to": "A_Concept",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "A_Accepted",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "W_Assess potential fraud",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "W_Validate application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "O_Returned",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "O_Returned",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "W_Validate application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Create Offer",
+    "to": "O_Created",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        },
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Refused",
+    "to": "A_Denied",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Refused",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Returned",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Returned",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Returned",
+    "to": "W_Call incomplete files",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (mail and online)",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (mail and online)",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Sent (mail and online)",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Assess potential fraud",
+    "to": "W_Complete application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Assess potential fraud",
+    "to": "W_Validate application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Cancelled",
+    "to": "O_Cancelled",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Concept",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Incomplete",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "W_Call incomplete files",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "W_Complete application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Create Application",
+    "to": "W_Complete application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Accepted",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Create Application",
+    "to": "A_Accepted",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "W_Call incomplete files",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Complete",
+    "to": "A_Accepted",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "W_Validate application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Validating",
+    "to": "A_Accepted",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Validating",
+    "to": "A_Complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Validating",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Validating",
+    "to": "W_Call incomplete files",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "A_Incomplete",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "A_Pending",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "A_Validating",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "O_Cancelled",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Accepted",
+    "to": "W_Call incomplete files",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Cancelled",
+    "to": "O_Create Offer",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Cancelled",
+    "to": "O_Created",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Offer"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Create Offer",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Created",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "O_Returned",
+    "to": "W_Validate application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Denied",
+    "to": "A_Accepted",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "A_Accepted",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Validating",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Validating",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "W_Call after offers",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Concept",
+    "to": "A_Create Application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "A_Validating",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "A_Validating",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "A_Concept",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "A_Concept",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "O_Returned",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "W_Call incomplete files",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Validating",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Validating",
+    "to": "W_Validate application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Cancelled",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Concept",
+    "to": "A_Accepted",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Denied",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Accepted",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "O_Accepted",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "A_Create Application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "W_Handle leads",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Accepted",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Concept",
+    "to": "W_Complete application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Complete",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Denied",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "A_Complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Incomplete",
+    "to": "W_Validate application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "O_Cancelled",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Cancelled",
+    "to": "A_Concept",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Complete",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "A_Create Application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Application"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Pending",
+    "to": "O_Cancelled",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Submitted",
+    "to": "A_Cancelled",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Accepted",
+    "to": "W_Call after offers",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Call incomplete files",
+    "to": "W_Call after offers",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Handle leads",
+    "to": "W_Complete application",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "W_Validate application",
+    "to": "W_Complete application",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Workflow"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "A_Accepted",
+    "to": "W_Complete application",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [],
+      "all": [
+        {
+          "type": "Simple",
+          "object_type": "Case_R"
+        }
+      ]
+    },
+    "counts": [
+      1,
+      null
+    ]
+  }
+]

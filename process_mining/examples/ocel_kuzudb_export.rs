@@ -1,3 +1,9 @@
+//! Export a directory of OCEL 2.0 logs, whose file names are hard-coded in `main`, to KuzuDB
+//! graph databases under `<directory>/kuzu`.
+//!
+//! Usage:
+//!   cargo run --release --example ocel_kuzudb_export -- <directory-of-ocel-logs>
+
 use std::{
     env::args,
     fs::{create_dir_all, remove_file},

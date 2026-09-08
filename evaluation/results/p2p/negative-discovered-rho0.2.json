@@ -1,0 +1,933 @@
+[
+  {
+    "from": "Approve Purchase Order",
+    "to": "Create Goods Receipt",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Order",
+    "to": "Create Goods Receipt",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Request for Quotation",
+    "to": "Create Purchase Order",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "quotation"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Create Invoice Receipt",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Create Invoice Receipt",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "invoice receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Goods Receipt",
+    "to": "Approve Purchase Order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Goods Receipt",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Goods Receipt",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Requisition",
+    "to": "Delegate Purchase Requisition Approval",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "material"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Requisition",
+    "to": "Delegate Purchase Requisition Approval",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Invoice Receipt",
+    "to": "Perform Two-Way Match",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Perform Two-Way Match",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Perform Two-Way Match",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "invoice receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Order",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Order",
+    "to": "Create Request for Quotation",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "quotation"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Order",
+    "to": "Approve Purchase Order",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "quotation"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Order",
+    "to": "Approve Purchase Order",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Goods Receipt",
+    "to": "Perform Two-Way Match",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Requisition",
+    "to": "Approve Purchase Requisition",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Requisition",
+    "to": "Approve Purchase Requisition",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "material"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Approve Purchase Order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Requisition",
+    "to": "Create Purchase Requisition",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "material"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Requisition",
+    "to": "Create Purchase Requisition",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Order",
+    "to": "Create Request for Quotation",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "quotation"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Requisition",
+    "to": "Create Request for Quotation",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Request for Quotation",
+    "to": "Create Purchase Requisition",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Perform Two-Way Match",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Perform Two-Way Match",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "invoice receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Order",
+    "to": "Create Purchase Order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Order",
+    "to": "Create Purchase Order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "quotation"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Request for Quotation",
+    "to": "Delegate Purchase Requisition Approval",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Delegate Purchase Requisition Approval",
+    "to": "Create Purchase Requisition",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "material"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Delegate Purchase Requisition Approval",
+    "to": "Create Purchase Requisition",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Requisition",
+    "to": "Delegate Purchase Requisition Approval",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "material"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Requisition",
+    "to": "Delegate Purchase Requisition Approval",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Request for Quotation",
+    "to": "Approve Purchase Requisition",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Delegate Purchase Requisition Approval",
+    "to": "Approve Purchase Requisition",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Delegate Purchase Requisition Approval",
+    "to": "Approve Purchase Requisition",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "material"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Delegate Purchase Requisition Approval",
+    "to": "Create Request for Quotation",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Create Purchase Order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Goods Receipt",
+    "to": "Create Purchase Order",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Purchase Order",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Request for Quotation",
+    "to": "Approve Purchase Order",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "quotation"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Perform Two-Way Match",
+    "to": "Create Invoice Receipt",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Approve Purchase Requisition",
+    "to": "Create Request for Quotation",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_requisition"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Invoice Receipt",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Create Invoice Receipt",
+    "to": "Execute Payment",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "invoice receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Create Goods Receipt",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "goods receipt"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Execute Payment",
+    "to": "Create Goods Receipt",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "purchase_order"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  }
+]

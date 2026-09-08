@@ -1,0 +1,173 @@
+[
+  {
+    "from": "Job Completed",
+    "to": "Job Blocked",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Blocked",
+    "to": "Job Eligible",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Blocked",
+    "to": "Submit Job",
+    "arc_type": "EF",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Cancelled",
+    "to": "Submit Job",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "User"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Cancelled",
+    "to": "Job Completed",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Blocked",
+    "to": "Job Eligible",
+    "arc_type": "EP",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Completed",
+    "to": "Job Failed",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Submit Job",
+    "to": "Job Cancelled",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "User"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  },
+  {
+    "from": "Job Completed",
+    "to": "Job Timeout",
+    "arc_type": "AS",
+    "label": {
+      "each": [],
+      "any": [
+        {
+          "type": "Simple",
+          "object_type": "Job"
+        }
+      ],
+      "all": []
+    },
+    "counts": [
+      0,
+      0
+    ]
+  }
+]

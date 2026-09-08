@@ -1,0 +1,75 @@
+# Console output of the Order Management run from order-management.xml: neg_datasets (fixed
+# premises), neg_diagonal_models (matched thresholds) and neg_reduction_stages
+# (--arrows=AS,EF,EP, the per-stage attribution of Sec. 6).
+
+== fixed OM
+=== order-management.xml ===
+  loaded: 21008 events, 10840 objects (91.585827ms)
+  linked: 33.540571ms
+  existence: 220 arcs (1.579220867s)
+  wrote rerun/order-management-existence.json
+  tau=0: discovered 140 -> reduced 9 (discover 2.385117869s, reduce 66.337615ms)
+  wrote rerun/order-management-negative-tau0.json
+  tau=0.1: discovered 244 -> reduced 25 (discover 3.297486814s, reduce 97.633427ms)
+  wrote rerun/order-management-negative-tau0.1.json
+  tau=0.2: discovered 274 -> reduced 39 (discover 3.325183164s, reduce 105.130019ms)
+  wrote rerun/order-management-negative-tau0.2.json
+
+== diag OM
+  rho  exist. exist.red   disc. neg.red  mixed
+    0     154        50     140     15     65   (7.279888886s)
+  0.1     208        65     244     33     98   (7.962896789s)
+  0.2     220        73     274     39    112   (7.069871289s)
+== stages OM
+
+== order-management.xml ==
+existence model: 220 arcs (arrows: AS,EF,EP)
+--- tau = 0 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5       84     60.0%
+                7. rule B / B'       45     32.1%
+          8. orientation dedup        2      1.4%
+                         total      131     93.6%
+                    model size 140 -> 9
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored      155               67
+            4. target-anchored      168               71
+     5. object-set equivalence       31               27
+
+--- tau = 0.1 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5      169     69.3%
+                7. rule B / B'       48     19.7%
+          8. orientation dedup        2      0.8%
+                         total      219     89.8%
+                    model size 244 -> 25
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored      188               79
+            4. target-anchored      347              135
+     5. object-set equivalence      299               88
+
+--- tau = 0.2 ---
+                         stage  removed     share
+     1. cardinality entailment        0      0.0%
+     2. within-pair domination        0      0.0%
+    3-6. condensation of 3,4,5      182     66.4%
+                7. rule B / B'       42     15.3%
+          8. orientation dedup       11      4.0%
+                         total      235     85.8%
+                    model size 274 -> 39
+
+  derivation edges contributed and what each rule alone would condense away:
+                          rule    edges    removed alone
+            3. source-anchored      211               85
+            4. target-anchored      401              150
+     5. object-set equivalence      385               98
+
+== OM DONE

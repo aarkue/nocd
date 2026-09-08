@@ -1,0 +1,98 @@
+# Console output of the sequential run over Container Logistics, P2P, SLURM and BPIC2017:
+# neg_datasets (fixed premises) for all thresholds, then neg_diagonal_models (matched
+# thresholds). 4234 repeated E2O and 4110 repeated O2O import warnings were removed and
+# absolute paths shortened; nothing else was edited. The "wrote ..." lines name the files
+# as the run produced them, before they were renamed into results/<log>/.
+# The Order Management invocations in this run aborted because the crate was built without
+# the sqlite feature; that log was rerun from its .xml, see run-order-management.log.
+
+    Finished `release` profile [optimized] target(s) in 28.31s
+== fixed order-management.sqlite
+=== order-management.sqlite ===
+
+thread 'main' (42950) panicked at process_mining/examples/neg_datasets.rs:77:65:
+failed to import OCEL: UnsupportedFormat("SQLite support not enabled")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+== fixed ContainerLogistics.xml
+=== ContainerLogistics.xml ===
+  loaded: 35413 events, 13910 objects (69.26965ms)
+  linked: 23.180793ms
+  existence: 116 arcs (54.382827ms)
+  wrote rerun/ContainerLogistics-existence.json
+  tau=0: discovered 59 -> reduced 15 (discover 145.540514ms, reduce 37.123365ms)
+  wrote rerun/ContainerLogistics-negative-tau0.json
+  tau=0.1: discovered 135 -> reduced 37 (discover 233.13135ms, reduce 46.799629ms)
+  wrote rerun/ContainerLogistics-negative-tau0.1.json
+  tau=0.2: discovered 140 -> reduced 42 (discover 321.716023ms, reduce 51.915065ms)
+  wrote rerun/ContainerLogistics-negative-tau0.2.json
+
+== fixed ocel2-p2p.xml
+=== ocel2-p2p.xml ===
+  loaded: 14671 events, 9543 objects (133.009429ms)
+  linked: 31.078835ms
+  existence: 32 arcs (21.529332ms)
+  wrote rerun/ocel2-p2p-existence.json
+  tau=0: discovered 44 -> reduced 5 (discover 29.352574ms, reduce 18.287732ms)
+  wrote rerun/ocel2-p2p-negative-tau0.json
+  tau=0.1: discovered 48 -> reduced 7 (discover 45.316974ms, reduce 19.212846ms)
+  wrote rerun/ocel2-p2p-negative-tau0.1.json
+  tau=0.2: discovered 49 -> reduced 6 (discover 64.690733ms, reduce 22.164467ms)
+  wrote rerun/ocel2-p2p-negative-tau0.2.json
+
+== fixed sacct-ocel-all.xml.gz
+=== sacct-ocel-all.xml.gz ===
+  loaded: 1094437 events, 385234 objects (5.94440666s)
+  linked: 2.335438377s
+  existence: 18 arcs (19.012863238s)
+  wrote rerun/sacct-ocel-all.xml-existence.json
+  tau=0: discovered 58 -> reduced 6 (discover 3.818784956s, reduce 1.592352276s)
+  wrote rerun/sacct-ocel-all.xml-negative-tau0.json
+  tau=0.1: discovered 60 -> reduced 9 (discover 135.113624923s, reduce 1.667577345s)
+  wrote rerun/sacct-ocel-all.xml-negative-tau0.1.json
+  tau=0.2: discovered 59 -> reduced 9 (discover 261.684389682s, reduce 1.639896352s)
+  wrote rerun/sacct-ocel-all.xml-negative-tau0.2.json
+
+== fixed bpic2017-ocel2.json
+=== bpic2017-ocel2.json ===
+  loaded: 1202267 events, 106162 objects (24.662543829s)
+  linked: 2.337421601s
+  existence: 678 arcs (81.170302413s)
+  wrote rerun/bpic2017-ocel2-existence.json
+  tau=0: discovered 212 -> reduced 28 (discover 53.993663175s, reduce 1.428631597s)
+  wrote rerun/bpic2017-ocel2-negative-tau0.json
+  tau=0.1: discovered 418 -> reduced 64 (discover 220.738364348s, reduce 1.54069892s)
+  wrote rerun/bpic2017-ocel2-negative-tau0.1.json
+  tau=0.2: discovered 453 -> reduced 69 (discover 371.721289989s, reduce 1.671434678s)
+  wrote rerun/bpic2017-ocel2-negative-tau0.2.json
+
+== diag order-management.sqlite
+
+thread 'main' (49475) panicked at process_mining/examples/neg_diagonal_models.rs:43:46:
+failed to import OCEL: UnsupportedFormat("SQLite support not enabled")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+== diag ContainerLogistics.xml
+  rho  exist. exist.red   disc. neg.red  mixed
+    0      73        31      59     23     54   (360.590005ms)
+  0.1     117        42     135     37     79   (419.400394ms)
+  0.2     116        42     140     42     84   (528.366368ms)
+== diag ocel2-p2p.xml
+  rho  exist. exist.red   disc. neg.red  mixed
+    0      31        21      44      5     26   (99.674218ms)
+  0.1      31        20      48      8     28   (117.0587ms)
+  0.2      32        19      49      6     25   (134.277102ms)
+== diag sacct-ocel-all.xml.gz
+  rho  exist. exist.red   disc. neg.red  mixed
+    0      12        11      58     15     26   (65.268280232s)
+  0.1      18        10      60     11     21   (182.31194194s)
+  0.2      18        10      59      9     19   (353.569557446s)
+== diag bpic2017-ocel2.json
+  rho  exist. exist.red   disc. neg.red  mixed
+    0     116        73     212     44    117   (89.439280832s)
+  0.1     513       105     418     77    182   (450.251247579s)
+  0.2     678       110     453     69    179   (580.19046664s)
+== stages OM
+
+thread 'main' (61667) panicked at process_mining/examples/neg_reduction_stages.rs:54:61:
+failed to import OCEL: UnsupportedFormat("SQLite support not enabled")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+== DONE

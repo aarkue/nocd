@@ -1,3 +1,18 @@
+## Negative OC-DECLARE Discovery and Reduction
+This repository is a fork of the [Rust4PM](https://rust4pm.aarkue.eu) project. The original repository is available [here](https://github.com/aarkue/rust4pm).
+
+It contains all code and evaluation artifacts for discovering and reducing negative OC-DECLARE constraints.
+For more details on how to run or use it, or for the evaluation results and artifacts, see the [evaluation README](./evaluation/README.md).
+
+
+The original README of Rust4PM is included below, for reference.
+
+---
+
+---
+
+---
+
 <div align="center">
 <h1><strong>Rust4PM</strong>: Rust for Process Mining</h1>
   <p><strong><code>process_mining</code> Rust Crate</strong></p>
@@ -53,6 +68,14 @@ Whenever a new version of the Rust4PM project is released, the following steps h
 4. Publish the new macro crate version (first) and then the new `process_mining` version (second) to crates.io, finally the updated CLI (`r4pm`)
 5. Build the Python bindings and publish the updated version to PyPi
 6. Export a updated bindings json file (`cargo test export_bindings --features bindings,dataframes,ocel-sqlite`) and add the new version to the docs ([rust4pm.aarkue.eu](https://rust4pm.aarkue.eu/))
+
+## Paper artifact: negative OC-DECLARE
+
+This repository is the artifact of the ICPM 2027 paper *Discovery and Reduction
+of Negative Object-Centric Declarative Constraints*. The implementation lives in
+`process_mining/src/discovery/object_centric/oc_declare/negative/`, the drivers
+in `process_mining/examples/`, and the discovered models, run logs and
+reproduction instructions in [`evaluation/README.md`](evaluation/README.md).
 
 ## `r4pm`
 CLI automatically generated from functions exposed in the `process_mining` crate.
